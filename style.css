@@ -499,7 +499,7 @@ body {
   /*————————————————————————————
     Project detail overlay (mobile-only)
   ————————————————————————————*/
-  /@media (max-width: 600px) {
+  @media (max-width: 600px) {
   /* ซ่อน layout เดิม (ถ้ามี) */
   .thumbnails,
   .sidebar {
