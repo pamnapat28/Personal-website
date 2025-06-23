@@ -460,142 +460,101 @@ body {
 /* NOW THE MOBILE STUFF: make sure this is OUTSIDE *any* other rule   */
 /* ──────────────────────────────────────────────────────────────────── */
 /* ──────────────────────────────────────────────
-   Mobile Overrides for ≤600px
-────────────────────────────────────────────── */
-/* ====== Mobile Styles (≤600px) ====== */
-/*————————————————————————————
+ /*————————————————————————————
   Mobile fine-tuning for About & Skills (≤600px)
 ————————————————————————————*/
-/* —————————————————————
- /* —————————————————————
-   Mobile tweaks for index.html
-   (≤600px)
-   ————————————————————— */
-/* ============================
-   Mobile Responsive Overrides
-   ============================ */
-/* ====================
-   Mobile Responsive Styles
-   ==================== */
-
-/* Tablet and small desktops */
-@media (max-width: 768px) {
-  /* Header stacks vertically */
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-  .nav {
-    margin-top: 0.5rem;
-    gap: 1rem;
-  }
-  .nav a {
-    font-size: var(--font-size-small);
-  }
-
-  /* Hero section height adjustment */
-  .main-content {
-    height: 60vh;
-  }
-
-  /* About section stacks and centers */
+@media (max-width: 600px) {
+  /*————————————————————————————
+    About & Skills mobile tweaks
+  ————————————————————————————*/
   #about {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 4rem 1rem;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    padding: 2rem 1rem !important;
+    margin-top: 3rem !important;
   }
-  #about > div {
-    width: 100%;
-    max-width: 100%;
+  #about > div:first-child img {
+    width: 220px !important;
+    height: auto !important;
+    margin-bottom: 1rem !important;
   }
-  #about img {
-    width: 80%;
-    height: auto;
-    margin-bottom: 1rem;
+  #about > div:nth-child(2) > div:first-child,
+  #about > div:nth-child(3) > div:first-child {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.75rem !important;
   }
-
-  /* Skills list full width */
-  .skills-list {
-    padding-left: 0;
-    list-style: none;
+  #about > div:nth-child(2) > div:last-child {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
   .skills-list li {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .skills-list .skill-desc {
+    font-size: 0.85rem !important;
   }
 
-  /* Project grid single column */
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  /*————————————————————————————
+    Project detail overlay (mobile-only)
+  ————————————————————————————*/
+  /* ซ่อน thumbnail list / sidebar แบบเดิม */
+  .thumbnails,
+  .sidebar {
+    display: none !important;
   }
-  .project-tile {
-    width: 90%;
+
+  /* Overlay แสดงรูปเต็มหน้าจอ */
+  #project-detail {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  #project-detail.hidden {
+    display: none;
+  }
+
+  /* กล่องภาพ + ข้อความ */
+  #project-detail .overlay {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  /* ปุ่มปิด */
+  #project-detail .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+  }
+
+  /* ภาพเต็ม */
+  #detail-img {
+    width: 100%;
+    height: auto;
+    display: block;
     margin: 0 auto;
   }
 
-  /* Section padding */
-  section {
-    padding: 3rem 1rem;
-  }
-}
-
-/* Mobile phones */
-@media (max-width: 480px) {
-  /* Logo and nav smaller */
-  .logo {
-    font-size: 1rem;
-  }
-  .nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .nav a {
+  /* ข้อความใต้ภาพ แบบ 1 บรรทัด เลื่อนซ้าย-ขวาได้ */
+  .detail-text {
+    margin-top: 1rem;
     font-size: 0.85rem;
-  }
-
-  /* Section titles smaller */
-  .section-title {
-    font-size: 1.2rem;
-  }
-  .section {
-    padding: 2rem 0.5rem;
-  }
-
-  /* Contact font size */
-  #contact .contact {
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsive tweaks for project-detail pages */
-@media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    height: auto;
-  }
-  .sidebar {
-    flex-direction: row;
+    line-height: 1.4;
+    color: #eee;
+    white-space: nowrap;
     overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--muted);
-    padding-bottom: 1rem;
-    gap: 1rem;
-  }
-  .sidebar h1 {
-    font-size: 1.5rem;
-  }
-  .hero {
-    grid-row: 2;
-    grid-column: 1;
-    height: 50vh;
-  }
-  .thumbnails {
-    justify-content: center;
-    padding: 0.5rem 0;
+    -webkit-overflow-scrolling: touch;
   }
 }
