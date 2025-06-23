@@ -499,62 +499,50 @@ body {
   /*————————————————————————————
     Project detail overlay (mobile-only)
   ————————————————————————————*/
-  /* ซ่อน thumbnail list / sidebar แบบเดิม */
+  /@media (max-width: 600px) {
+  /* ซ่อน layout เดิม (ถ้ามี) */
   .thumbnails,
   .sidebar {
     display: none !important;
   }
 
-  /* Overlay แสดงรูปเต็มหน้าจอ */
-  #project-detail {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+  /* จัดเป็นคอลัมน์การ์ดโปรเจกต์ */
+  .project-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  #project-detail.hidden {
-    display: none;
-  }
-
-  /* กล่องภาพ + ข้อความ */
-  #project-detail .overlay {
-    position: relative;
-    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
     padding: 1rem;
-    text-align: center;
   }
 
-  /* ปุ่มปิด */
-  #project-detail .close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    color: #fff;
-    background: none;
-    border: none;
+  .project-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
-  /* ภาพเต็ม */
-  #detail-img {
+  .project-card img {
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
   }
 
-  /* ข้อความใต้ภาพ แบบ 1 บรรทัด เลื่อนซ้าย-ขวาได้ */
-  .detail-text {
-    margin-top: 1rem;
-    font-size: 0.85rem;
+  .project-info {
+    padding: 0.75rem 1rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
     line-height: 1.4;
-    color: #eee;
+    color: #555;
     white-space: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 }
+
