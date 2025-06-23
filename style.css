@@ -451,77 +451,25 @@ body {
   right: 0;
   background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
 /* ==== Mobile Styles ==== */
-@media (max-width: 600px) {
-  /* Header stacks vertically and shrinks padding */
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  /* Collapse nav into a vertical list */
-  .nav {
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-  }
-
-  /* Make hero image/content fit auto height */
-  .main-content {
-    height: auto;
-    background-attachment: scroll;
-  }
-
-  /* Tighter section padding */
-  .section {
-    padding: 3rem 1rem 2rem;
-  }
-
-  /* Single-column project grid */
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  /* Stack container columns into one */
-  .container,
-  .layout {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Sidebar becomes full width */
-  .side {
-    padding: 1.5rem;
-    border: none;
-  }
-
-  /* Reduce font sizes slightly */
-  :root {
-    --font-size-base: 14px;
-    --font-size-small: 0.85rem;
-    --font-size-large: 1.5rem;
-  }
-}
-}
 /* =====================================================
    Mobile Responsive Overrides (max-width: 600px)
    ===================================================== */
 @media (max-width: 600px) {
-  /* Header: Stack and shrink padding */
+  /* Header: stack vertically, shrink padding */
   header {
     flex-direction: column;
     align-items: flex-start;
     padding: 0.75rem 1rem;
   }
 
-  /* Navigation: vertical list, full width */
+  /* Navigation: vertical full-width list */
   .nav {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
   }
 
-  /* Main content: allow auto height for background image */
+  /* Main content: auto height background */
   .main-content {
     height: auto;
     background-attachment: scroll;
@@ -538,13 +486,13 @@ body {
     gap: 1rem;
   }
 
-  /* Grid-based containers collapse to single column */
+  /* Containers collapse to one column */
   .container,
   .layout {
     grid-template-columns: 1fr !important;
   }
 
-  /* Sidebar (side) becomes full width, remove borders */
+  /* Sidebars become full width, remove borders */
   .side {
     padding: 1rem 1.5rem;
     border: none !important;
@@ -557,21 +505,19 @@ body {
     --font-size-large: 1.5rem;
   }
 
-  /* Gallery & thumbnails: adjust margins for small screens */
+  /* Gallery & thumbnails adjustments */
   .gallery {
     gap: 0.5rem;
   }
   .thumbnails {
     padding-bottom: 0.25rem;
   }
-
-  /* Adjust image thumbnails height proportionally */
   .thumbnails img {
     width: 80px;
     height: auto;
   }
 
-  /* Skills list: full width and center */
+  /* Skills list: full width, no indent */
   .skills-list {
     width: 100%;
     padding-left: 0;
@@ -579,24 +525,40 @@ body {
   }
   .skills-list li {
     font-size: 0.9rem;
+    margin-bottom: 0.6rem;
   }
 
-  /* Contact & about text: center align for readability */
+  /* About & Contact text: center-aligned */
   .about,
   .contact {
     text-align: center;
     font-size: var(--font-size-small);
     line-height: 1.6;
+    padding: 0 1rem;
   }
 
-  /* Footer: reduce padding */
+  /* About Me container: stack image + text */
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  /* About Me image: rectangle */
+  #about img {
+    display: block;
+    width: 120px;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  /* Footer: reduce padding & font size */
   footer {
     padding: 2rem 1rem;
     font-size: 0.75rem;
   }
 }
-
-
-
-
-
