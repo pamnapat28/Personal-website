@@ -467,62 +467,97 @@ body {
   Mobile fine-tuning for About & Skills (≤600px)
 ————————————————————————————*/
 /* —————————————————————
+ /* —————————————————————
    Mobile tweaks for index.html
    (≤600px)
    ————————————————————— */
 @media (max-width: 600px) {
-  /* Hero area */
+  /* Prevent any horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Hero: shorter and full-width */
   .main-content {
-    height: 50vh;                     /* a bit shorter */
+    width: 100%;
+    height: 50vh;
     background-position: top center;
   }
 
-  /* About section stacks & centers */
+  /* Header: slightly bigger padding and center logo */
+  header {
+    padding: 1rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  /* About section: stack, center, tighten up */
   #about {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    padding: 2rem 1rem !important;
+    text-align: center;
     gap: 1.5rem !important;
-    margin-top: 4rem !important;
+    margin: 4rem 1rem 2rem !important;
+    padding: 0 !important;
   }
+  /* Profile image */
   #about > div:first-child img {
     width: 220px !important;
     height: auto !important;
-    margin-bottom: 1rem !important;
+    margin: 0 auto;
   }
-  #about > div:nth-child(2),
-  #about > div:nth-child(3) {
-    width: 100% !important;
-    text-align: center !important;
+  /* “ABOUT ME” heading */
+  #about > div:nth-child(2) > div:first-child {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  /* About paragraph */
+  #about > div:nth-child(2) > div:last-child {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
 
-  /* Skills list centers */
+  /* Skills heading */
+  #about > div:nth-child(3) > div:first-child {
+    font-size: 1.6rem !important;
+  }
+  /* Skills list */
   .skills-list {
-    justify-content: center;
-    padding-left: 0.5rem;
+    padding-left: 0.5rem !important;
+  }
+  .skills-list li {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .skills-list .skill-desc {
+    font-size: 0.85rem !important;
   }
 
-  /* Projects go single-column */
+  /* Projects grid → single column */
   .project-grid {
+    display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
-    padding: 0 1rem;
+    padding: 0 1rem !important;
   }
   .project-tile {
-    margin: 0 auto;
     max-width: 300px;
+    margin: 0 auto;
   }
 
-  /* Contact centers */
+  /* Contact: center text */
   #contact .contact {
-    text-align: center;
-    padding: 0 1rem;
+    text-align: center !important;
+    padding: 0 1rem !important;
   }
 
-  /* Footer smaller & centered text */
+  /* Footer: smaller & centered */
   footer {
-    padding: 2rem 1rem !important;
     font-size: 0.75rem !important;
-    text-align: center;
+    text-align: center !important;
+    padding: 2rem 1rem !important;
   }
 }
+
