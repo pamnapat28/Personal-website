@@ -459,106 +459,73 @@ body {
 /* ──────────────────────────────────────────────────────────────────── */
 /* NOW THE MOBILE STUFF: make sure this is OUTSIDE *any* other rule   */
 /* ──────────────────────────────────────────────────────────────────── */
-@media (max-width: 600px) {
-  /* Header: stack vertically, shrink padding */
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.75rem 1rem;
+/* ──────────────────────────────────────────────
+   Mobile Overrides for ≤600px
+────────────────────────────────────────────── */
+@media only screen and (max-width: 600px) {
+
+  /* 1) ABOUT & SKILLS containers: full-width + centered */
+  section#about,
+  section#skills {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
   }
 
-  /* Navigation: full-width vertical list */
-  .nav {
-    flex-direction: column;
-    gap: 0.75rem;
+  /* 2) Headings stack nicely */
+  section#about .section-title,
+  section#skills .section-title {
+    margin-bottom: 1rem;
+    display: block;
     width: 100%;
   }
 
-  /* Main content: auto-height so you can scroll */
-  .main-content {
-    height: auto;
-    background-attachment: scroll;
+  /* 3) Profile image as rectangle, centered */
+  section#about img {
+    display: block;
+    width: 140px;        /* tweak as you like */
+    height: auto;        /* preserves aspect ratio */
+    margin: 0 auto 1rem; /* center + spacing below */
+    border-radius: 0;    /* perfect rectangle */
+    object-fit: cover;
   }
 
-  /* Tighten section padding */
-  .section {
-    padding: 2rem 1rem;
+  /* 4) About text: readable, centered */
+  section#about .about {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 90%;
   }
 
-  /* Projects, containers, layouts collapse to 1 column */
+  /* 5) Skills list: full-width, no indent */
+  section#skills .skills-list {
+    width: 100%;
+    padding-left: 0;
+    margin: 1rem auto 0;
+  }
+  section#skills .skills-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* 6) Collapse any multi-column grids into one column */
   .project-grid,
   .container,
   .layout {
     grid-template-columns: 1fr !important;
-    gap: 1rem;
+    gap: 1rem !important;
   }
 
-  /* Side panels become full width */
-  .side {
-    padding: 1rem 1.5rem;
-    border: none !important;
-  }
-
-  /* Scale down base fonts */
+  /* 7) Tweak global font-sizes & spacing */
   :root {
     --font-size-base: 14px;
     --font-size-small: 0.85rem;
     --font-size-large: 1.5rem;
   }
-
-  /* Gallery & thumbnails tweaks */
-  .gallery {
-    gap: 0.5rem;
+  .section {
+    padding: 2rem 1rem;
   }
-  .thumbnails {
-    padding-bottom: 0.25rem;
-  }
-  .thumbnails img {
-    width: 80px;
-    height: auto;
-  }
-
-  /* About & Contact: center and full-width */
-  .about,
-  .contact {
-    text-align: center;
-    font-size: var(--font-size-small);
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
-
-  /* ABOUT section: stack image + text */
-  /* if your HTML is using <section id="about">…<img>…<p class="about">… */
-  #about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem 1rem;
-  }
-
-  /* Profile image as rectangle */
-  #about img {
-    display: block;
-    width: 120px;
-    height: auto;
-    margin: 1rem auto;
-    border-radius: 0;
-    object-fit: cover;
-  }
-
-  /* Skills list: flush, full width */
-  .skills-list {
-    width: 100%;
-    padding-left: 0;
-    margin: 1rem 0;
-  }
-  .skills-list li {
-    font-size: 0.9rem;
-    margin-bottom: 0.6rem;
-  }
-
-  /* Footer: trim padding & font */
   footer {
     padding: 2rem 1rem;
     font-size: 0.75rem;
