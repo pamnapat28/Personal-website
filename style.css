@@ -463,15 +463,13 @@ body {
  /*————————————————————————————
   Mobile fine-tuning for About & Skills (≤600px)
 ————————————————————————————*/
-/* ——————————————— Mobile-First Styles (Portrait + Landscape) ——————————————— */
 @media (max-width: 600px) {
-  /* ซ่อน layout เดิม (ถ้ามี) */
-  .thumbnails,
+  /* —————————————————— ปรับหน้าโปรเจกต์ เป็นการ์ดเต็มจอ —————————————————— */
+  .thumbnails,    /* ถ้าคุณยังมี thumbnails เดิม */
   .sidebar {
     display: none !important;
   }
 
-  /* จัดเป็นคอลัมน์การ์ดโปรเจกต์ */
   .project-list {
     display: flex;
     flex-direction: column;
@@ -505,6 +503,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.4;
     color: #555;
+    /* ลักษณะเลื่อนข้อความแนวนอน ถ้าเกินความยาว */
     white-space: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
