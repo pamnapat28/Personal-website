@@ -457,46 +457,32 @@ body {
 }
 
 /* ──────────────────────────────────────────────────────────────────── */
-/* NOW THE MOBILE STUFF: make sure this is OUTSIDE *any* other rule   */
-/* ──────────────────────────────────────────────────────────────────── */
-/* ──────────────────────────────────────────────
- /*————————————————————————————
- @media (max-width: 600px) {
-  /* Stack & pad the About section */
-  #about {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 2rem !important;
-    padding: 2rem 1rem !important;
-    margin-top: 3rem !important;
+/* เตือนหมุนหน้าจอบนมือถือเล็ก (≤600px) เมื่ออยู่ในโหมด Portrait */
+@media (max-width: 600px) and (orientation: portrait) {
+  /* ซ่อน pseudo-element เริ่มต้นก่อน */
+  body::before {
+    display: flex;
   }
-
-  /* Profile image: smaller and centered */
-  #about > div:first-child img {
-    width: 220px !important;
-    height: auto !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* ABOUT ME & SKILLS headings */
-  #about > div:nth-child(2) > div:first-child,
-  #about > div:nth-child(3) > div:first-child {
-    font-size: 1.6rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-
-  /* About description text */
-  #about > div:nth-child(2) > div:last-child {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-  }
-
-  /* Skills list items & inline desc */
-  .skills-list li {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  .skills-list .skill-desc {
-    font-size: 0.85rem !important;
+  body::before {
+    content: "กรุณาหมุนหน้าจอเป็นแนวนอน\nเพื่อประสบการณ์ที่ดีที่สุด";
+    white-space: pre-line;          /* เคารพ \n */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: center;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
   }
 }
+
+/* ปิดการแสดง pseudo-element ในโหมดอื่นทั้งหมด */
+body::before {
+  display: none;
+}
+
