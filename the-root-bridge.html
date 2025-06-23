@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Root Bridge Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="index.html">← Back to Portfolio</a>
+      <h1>The Root Bridge Project</h1>
+      <div class="meta">
+        <div><strong>Project Year:</strong> 2024</div>
+        <div><strong>Skills & Applications:</strong><br>
+             Rhino, Grasshopper, V-Ray, Photoshop,<br>
+             Illustrator, InDesign</div>
+      </div>
+      <p class="description">
+        The project explores how integrating living systems into architecture can redefine traditional boundaries between housing, infrastructure, landscape, and urbanism. Envisioned as both a transportation bridge and a residential landmass, it challenges the conventional view of architecture as static and inert, proposing instead a dynamic, adaptable rhizome system that evolves over time. Located on a future bridge site connecting the Songwat and Tha Din Daeng neighborhoods, the design offers an alternative to the disruptive nature of massive concrete infrastructure. Rather than demolishing the historic site, the living root structure functions as an urban prosthesis, mirroring the scale and typology of local shophouses. This approach enhances traditional street-business-housing relationships through a new three-dimensional ground plane. The outcome is a hybrid space, a synthetic ecology that seamlessly blends landscape, living structure, and man-made infrastructure, creating a living garden for human occupation. This design not only challenges conventional notions of housing and urbanism but also promotes environmental sustainability by utilizing living materials that contribute to air purification and biodiversity. Additionally, the adaptable nature of the structure allows it to respond to changing community needs and environmental conditions over time, ensuring its relevance and resilience in the face of urban development.
+      </p>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero">
+      <img id="mainImg" src="images_root_bridge/render1.jpg" alt="Render 1">
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnails" tabindex="0">
+      <img src="images_root_bridge/render1.jpg" alt="Render 1" class="selected">
+      <img src="images_root_bridge/render2.jpg" alt="Render 2">
+      <img src="images_root_bridge/render3.jpg" alt="Render 3">
+      <img src="images_root_bridge/render4.jpg" alt="Render 4">
+      <img src="images_root_bridge/render5.jpg" alt="Render 5">
+      <img src="images_root_bridge/render6.jpg" alt="Render 6">
+      <img src="images_root_bridge/render7.jpg" alt="Render 7">
+      <img src="images_root_bridge/render8.jpg" alt="Render 8">
+      <img src="images_root_bridge/render9.jpg" alt="Render 9">
+      <img src="images_root_bridge/render10.jpg" alt="Render 10">
+      <img src="images_root_bridge/render11.jpg" alt="Render 11">
+      <img src="images_root_bridge/render12.jpg" alt="Render 12">
+      <img src="images_root_bridge/render13.jpg" alt="Render 13">
+      <img src="images_root_bridge/render14.jpg" alt="Render 14">
+      <img src="images_root_bridge/render15.jpg" alt="Render 15">
+      <img src="images_root_bridge/render16.jpg" alt="Render 16">
+      <img src="images_root_bridge/render17.jpg" alt="Render 17">
+      <img src="images_root_bridge/render18.jpg" alt="Render 18">
+    </div>
+  </div>
+
+  <script>
+    const mainImg = document.getElementById('mainImg');
+    const thumbs  = document.querySelectorAll('.thumbnails img');
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+        thumbs.forEach(t => t.classList.remove('selected'));
+        thumb.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>

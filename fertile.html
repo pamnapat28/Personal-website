@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fertile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="index.html">← Back to Portfolio</a>
+      <h1>Fertile</h1>
+      <div class="meta">
+        <div><strong>Project Year:</strong> 2023</div>
+        <div>
+          <strong>Skills &amp; Applications:</strong><br>
+          Rhino · Grasshopper · V-Ray · Adobe Photoshop · Adobe Illustrator · Adobe InDesign<br>
+          Environmental Analysis · Physical Model Making
+        </div>
+      </div>
+      <p class="description">
+        <!-- TODO: write your Fertile project description here -->
+ Fertile reimagines barren urban lots as living laboratories by harnessing the hidden power of fungi. An underground “tower”—built from a biodegradable mycelium shell—is inserted between the O-horizon and C-horizon, where its hyphae merge with native mycorrhizae to enrich organic matter, improve nitrogen uptake, and rebuild soil structure over time. At the surface, modular planters, interpretive seating, and ecological walkways invite community engagement and demonstration of regenerative cycles. Combining hands-on biofabrication, ecological monitoring, and site-specific landscape interventions, Fertile showcases a creative, research-driven approach to earth-integrated infrastructure—transforming neglected ground into productive, resilient ecosystems.  
+      </p>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero">
+      <img id="mainImg" src="images_fertile/render1.jpg" alt="Fertile Render 1">
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnails" tabindex="0">
+      <img src="images_fertile/render1.png" alt="Render 1" class="thumb selected">
+      <img src="images_fertile/render2.png" alt="Render 2" class="thumb">
+      <img src="images_fertile/render3.png" alt="Render 3" class="thumb">
+    </div>
+  </div>
+
+  <script>
+    const mainImg = document.getElementById('mainImg');
+    document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+        document.querySelectorAll('.thumb').forEach(t => t.classList.remove('selected'));
+        thumb.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>

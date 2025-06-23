@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shellie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+ 
+
+</head>
+<body>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="index.html">← Back to Portfolio</a>
+      <h1>Shellie</h1>
+      <div class="meta">
+        <div><strong>Project Year:</strong> 2025</div>
+        <div>
+          <strong>Skills &amp; Applications:</strong><br>
+          Fashion Design · Textile Pattern Making · Branding &amp; Identity ·<br>
+    Adobe Illustrator · Adobe Photoshop · Physical Prototyping
+        </div>
+      </div>
+      <p class="description">
+        <!-- TODO: insert Shellie project description here -->
+ Shellie is where soft nostalgia and contemporary whimsy intertwine—an artisanal fashion label dedicated to delicate details, handcrafted touches, and timeless charm.
+ Styled with a pleated lace skirt, silver watch, and cloud-blue bag, Shellie’s debut “Gleam Draped Top” is your soft summer statement—perfect for gallery strolls, afternoon cafés, and golden-hour moments. Soft femininity meets playful nostalgia in every piece: a fashion brand inspired by delicate charm and vintage details, reinvented for today’s confident, dreamy girls. Shellie balances innocence and individuality with timeless silhouettes and a whimsical polka-dot motif, offering handcrafted, small-batch garments that celebrate personal style and story. Rooted in sustainable practices and artisan craftsmanship, each design is made to be mixed, matched, and layered—inviting wearers to create their own moments of magic and meaning.
+      </p>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero">
+      <img id="mainImg" src="images_shellie/render1.jpg" alt="Shellie Render 1">
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnails" tabindex="0">
+      <img src="images_shellie/render1.png" alt="Render 1" class="thumb selected">
+      <img src="images_shellie/render2.png" alt="Render 2" class="thumb">
+      <img src="images_shellie/render3.png" alt="Render 3" class="thumb">
+      <img src="images_shellie/render4.png" alt="Render 4" class="thumb">
+      <img src="images_shellie/render5.jpeg" alt="Render 5" class="thumb">
+      <img src="images_shellie/render6.jpeg" alt="Render 6" class="thumb">
+      <img src="images_shellie/render7.jpeg" alt="Render 7" class="thumb">
+      <img src="images_shellie/render8.jpg" alt="Render 8" class="thumb">
+      <!-- add more renders as needed -->
+    </div>
+  </div>
+
+  <script>
+    const mainImg = document.getElementById('mainImg');
+    document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+        document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('selected'));
+        thumb.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>

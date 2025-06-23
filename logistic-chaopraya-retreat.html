@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logistic Chaopraya Retreat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="index.html">← Back to Portfolio</a>
+      <h1>Logistic Chaopraya Retreat</h1>
+      <div class="meta">
+        <div><strong>Project Year:</strong> 2025</div>
+        <div>
+          <strong>Skills &amp; Applications:</strong><br>
+          Rhino · Grasshopper · AutoCAD · V-Ray · Adobe Photoshop · Adobe Illustrator · Adobe InDesign<br>
+          Environmental Analysis · Physical Model Making
+        </div>
+      </div>
+      <p class="description">
+        Logistic Chaopraya Retreat reimagines a riverside logistics hub along the Chao Phraya River as a tranquil, adaptive retreat. Anchored by refurbished shipping containers and suspended walkways, the design weaves public green spaces through loading bays, offering commuters and dockworkers shaded rest areas overlooking the water. Passive‐cooling pergolas and modular bamboo screens respond to shifting seasonal winds, while floating platforms double as performance stages and community gardens. Careful reuse of industrial materials and site‐specific plantings create a hybrid landscape that balances operational efficiency with human comfort—transforming a functional port into an engaging, resilient public realm.
+      </p>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero">
+      <img id="mainImg" src="images_logistic_chaopraya_retreat/render1.jpg" alt="Logistic Chaopraya Retreat Render 1">
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnails" tabindex="0">
+      <img src="images_logistic_chaopraya_retreat/render1.jpg" alt="Render 1" class="thumb selected">
+      <img src="images_logistic_chaopraya_retreat/render2.jpg" alt="Render 2" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render3.jpg" alt="Render 3" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render4.jpg" alt="Render 4" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render5.jpg" alt="Render 5" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render6.jpg" alt="Render 6" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render7.jpg" alt="Render 7" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render8.jpg" alt="Render 8" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render9.jpg" alt="Render 9" class="thumb">
+      <img src="images_logistic_chaopraya_retreat/render10.jpg" alt="Render 10" class="thumb">
+      <!-- add more renders as needed -->
+    </div>
+  </div>
+
+  <script>
+    const mainImg = document.getElementById('mainImg');
+    document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+        document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('selected'));
+        thumb.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>

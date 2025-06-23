@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAMNAPAT Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <header>
+    <div class="logo">PAMNAPAT</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="main-content"></section>
+
+<section id="about" style="
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4vw;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+">
+  <!-- Profile Image -->
+  <div style="flex: 0 0 340px; display: flex; justify-content: flex-end; margin-top: 50px;">
+    <img 
+      src="profile.JPG" 
+      alt="Pam Napat"
+      style="
+        width: 320px; 
+        height: 460px;
+        object-fit: cover; 
+        object-position: top center; 
+        background: #222;
+        border-radius: 0;
+        display: block;
+      "
+    >
+  </div>
+
+  <!-- About Me Text -->
+  <div style="flex: 1 1 470px; max-width: 580px; min-width: 320px;">
+    <div style="font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:2rem;">
+      ABOUT ME
+    </div>
+    <div style="font-size:1.05rem; color:#ededed; line-height:1.85;">
+      I am Pam Napat, a multidisciplinary designer specializing in spatial design, visual communication, and advertising.<br><br>
+      With a comprehensive background in architecture and design from the International Program in Design and Architecture (INDA) at Chulalongkorn University, my work is grounded in conceptual thinking and spatial awareness.<br><br>
+     My practice focuses on exploring how form, image, and narrative converge to shape perception and experience across physical, digital, and brand landscapes. I aim to marry visual clarity with creative exploration, drawing on architectural principles and artistic intuition to craft thoughtful, resonant work across every medium.
+     I’m especially drawn to projects at the nexus of design and storytelling, where each detail invites deeper engagement. By grounding my process in research and analysis yet remaining open to serendipitous discovery, I deliver solutions that are both intentional and innovative—sparking meaningful connections between people and place.
+    </div>
+  </div>
+
+  <!-- Skills + Inline Description -->
+  <div style="flex: 0 0 330px; min-width:230px; display: flex; flex-direction: column; align-items: flex-start;">
+    <div style="font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:2rem; color:#fff;">
+      SKILLS
+    </div>
+    <ul class="skills-list" id="skills-list">
+      <li onclick="showSkillDesc(this, 'rhino')">Rhino <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'vray')">V-Ray <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'zbrush')">ZBrush <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'blender')">Blender <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'figma')">Figma <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'ai')">Adobe Illustrator <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'ps')">Adobe Photoshop <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'indesign')">Adobe InDesign <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'ae')">Adobe After Effects <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'sketchup')">SketchUp / 3D Modeling <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'interior')">Interior Design <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'graphic')">Graphic Communication <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'concept')">Concept Development <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'direction')">Creative Direction <span class="skill-desc"></span></li>
+      <li onclick="showSkillDesc(this, 'htmlcss')">Basic HTML &amp; CSS <span class="skill-desc"></span></li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  // Skill descriptions
+  const descriptions = {
+    rhino: "3D modeling software, popular in architecture & product design.",
+    vray: "Rendering engine for photorealistic images and visualizations.",
+    zbrush: "Digital sculpting software for high-detail 3D modeling.",
+    blender: "Open-source software for 3D modeling, animation, and rendering.",
+    figma: "Collaborative interface design and prototyping tool.",
+    ai: "Vector-based graphic design software.",
+    ps: "Image editing and digital painting software.",
+    indesign: "Layout and publishing tool for books, magazines, and print.",
+    ae: "Motion graphics and visual effects for video.",
+    sketchup: "Easy-to-use 3D modeling software, great for architecture.",
+    interior: "Designing and planning functional, beautiful interior spaces.",
+    graphic: "Conveying ideas visually through graphics and design.",
+    concept: "Turning creative ideas into actionable design solutions.",
+    direction: "Leading and shaping creative projects and visual storytelling.",
+    htmlcss: "Fundamental languages for building and styling web pages."
+  };
+
+  // Show/hide skill description inline
+  function showSkillDesc(liElem, key) {
+    // Remove selected class and descriptions from all
+    document.querySelectorAll('#skills-list li').forEach(li => {
+      li.classList.remove('selected');
+      li.querySelector('.skill-desc').textContent = "";
+    });
+    // Add selected and show description
+    liElem.classList.add('selected');
+    liElem.querySelector('.skill-desc').textContent = descriptions[key];
+  }
+</script>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="section-title">Selected Projects</div>
+    <div class="project-grid">
+      <a href="the-root-bridge.html" class="project-tile">The Root Bridge</a>
+     <a href="cinematic-bangkok.html" class="project-tile">Cinematic Bangkok</a>
+      <a href="winwin-situation.html" class="project-tile">Winwin Situation</a>
+      <a href="logistic-chaopraya-retreat.html" class="project-tile">Logistic Chaopraya Retreat</a>
+      <a href="fertile.html" class="project-tile">Fertile</a>   
+      <a href="shellie.html" class="project-tile">Shellie</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="section-title">Contact</div>
+    <p class="contact">
+      <strong>Phone:</strong> <a href="tel:0824426654">082-442-6654</a><br>
+      <strong>Email:</strong> <a href="mailto:pamnapat28@gmail.com">pamnapat28@gmail.com</a><br>
+      <strong>Instagram:</strong> <a href="https://instagram.com/pamnapat_" target="_blank">@pamnapat_</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 PAMNAPAT. All rights reserved.
+  </footer>
+</body>
+</html>
+

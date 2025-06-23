@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WinWin Situation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <a href="index.html">← Back to Portfolio</a>
+      <h1>WinWin Situation</h1>
+      <div class="meta">
+        <div><strong>Project Year:</strong> 2024</div>
+        <div>
+          <strong>Skills &amp; Applications:</strong><br>
+          Rhino · Grasshopper · AutoCAD · V-Ray · Adobe Photoshop · Adobe Illustrator · Adobe InDesign<br>
+          Woodworking &amp; Metal Fabrication · Hand &amp; Power Tool Operation
+        </div>
+      </div>
+      <p class="description">
+        In July 2024, students, faculty, neighbors and motorcycle‐taxi drivers gathered at Ekamai Soi 4 to celebrate the completion of WinWin Situation—a seven-week, second-year design-build collaboration with studio ThingsMatter. Rather than “fix” the existing stand, the team learned from its quirks: measuring uneven walls, negotiating with drivers, property owners and city officials, and fabricating parts in steel, wood and fabric. The result is a custom seating system cantilevered from private walls without encroaching on the roadway, paired with a colorful fabric canopy that weaves between utility poles and complements nearby street art. Integrated recycling bins and modular auxiliary seats prototype easily deployable add-ons, while the bespoke canopy and bench transform the stop into both a local landmark and a practical gathering spot. WinWin Situation proves that hands-on fabrication and community engagement can turn a simple “win” into a truly shared urban asset.
+      </p>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero">
+      <img id="mainImg" src="images_winwin_situation/render1.jpg" alt="WinWin Situation Render 1">
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnails" tabindex="0">
+      <img src="images_winwin_situation/render1.jpg" alt="Render 1" class="thumb selected">
+      <img src="images_winwin_situation/render2.jpg" alt="Render 2" class="thumb">
+      <img src="images_winwin_situation/render3.jpg" alt="Render 3" class="thumb">
+      <img src="images_winwin_situation/render4.jpg" alt="Render 4" class="thumb">
+      <img src="images_winwin_situation/render5.jpg" alt="Render 5" class="thumb">
+      <img src="images_winwin_situation/render6.jpg" alt="Render 6" class="thumb">
+      <img src="images_winwin_situation/render7.jpg" alt="Render 7" class="thumb">
+      <img src="images_winwin_situation/render8.jpg" alt="Render 8" class="thumb">
+      <img src="images_winwin_situation/render9.jpg" alt="Render 9" class="thumb">
+      <img src="images_winwin_situation/render10.jpg" alt="Render 10" class="thumb">
+
+      <!-- add more renders as needed -->
+    </div>
+  </div>
+
+  <script>
+    const mainImg = document.getElementById('mainImg');
+    document.querySelectorAll('.thumbnails .thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+        document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('selected'));
+        thumb.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>
