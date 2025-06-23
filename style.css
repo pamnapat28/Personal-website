@@ -464,64 +464,49 @@ body {
   Mobile fine-tuning for About & Skills (≤600px)
 ————————————————————————————*/
 /* ——————————————— Mobile-First Styles (Portrait + Landscape) ——————————————— */
-@media only screen and (max-width: 600px) {
-  /* 1) ซ่อน sidebar / thumbnail list เดิม */
-  .sidebar,
-  .thumbnails {
+@media (max-width: 600px) {
+  /* ซ่อน layout เดิม (ถ้ามี) */
+  .thumbnails,
+  .sidebar {
     display: none !important;
   }
 
-  /* 2) รีเซ็ตคอนเทนเนอร์หลักให้เต็มจอ */
-  /* เปลี่ยนชื่อ .wrapper / .content ให้ตรงกับของคุณ */
-  .wrapper {
-    display: block !important;
-  }
-  .content, .main, #main {  /* ลบชื่อคลาส/ไอดีที่คุณใช้จัดคอนเทนต์หลัก */
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 1rem !important; /* เพิ่ม padding ซ้าย-ขวาเล็กน้อย */
-  }
-
-  /* 3) จัด project-list ให้เป็น column เดียว */
+  /* จัดเป็นคอลัมน์การ์ดโปรเจกต์ */
   .project-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
-  /* --- card styling --- */
   .project-card {
     background: #fff;
     border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform .15s, box-shadow .15s;
-  }
-  .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
   .project-card img {
-    display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    display: block;
   }
 
   .project-info {
     padding: 0.75rem 1rem;
   }
+
   .project-info h3 {
+    font-size: 1.2rem;
     margin: 0 0 0.5rem;
-    font-size: 1.25rem; /* ปรับให้เด่นขึ้น */
-    color: #222;
   }
+
   .project-desc {
-    margin: 0;
     font-size: 0.9rem;
     line-height: 1.4;
     color: #555;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
