@@ -462,72 +462,94 @@ body {
 /* ──────────────────────────────────────────────
    Mobile Overrides for ≤600px
 ────────────────────────────────────────────── */
-@media only screen and (max-width: 600px) {
-
-  /* 1) ABOUT & SKILLS containers: full-width + centered */
-  section#about,
-  section#skills {
+/* ====== Mobile Styles (≤600px) ====== */
+@media (max-width: 600px) {
+  /* Header & Hamburger */
+  header {
+    padding: 1rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--text-color);
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background);
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    z-index: 999;
+  }
+  .nav.open {
+    max-height: 240px; /* enough for 3 links */
+  }
+  .nav a {
+    display: block;
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 0.75rem 0;
+    font-size: 1rem;
     text-align: center;
   }
 
-  /* 2) Headings stack nicely */
-  section#about .section-title,
-  section#skills .section-title {
-    margin-bottom: 1rem;
+  /* Hero */
+  .main-content {
+    height: 60vh;
+    background-position: top center;
+  }
+
+  /* About Section */
+  #about {
+    flex-direction: column !important;
+    padding: 2rem 1rem !important;
+    margin-top: 4rem !important;
+  }
+  #about img {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+    height: auto;
+  }
+  #about > div:nth-child(2),
+  #about > div:nth-child(3) {
+    width: 100% !important;
+    text-align: center;
+  }
+  .skill-desc {
     display: block;
-    width: 100%;
+    margin-left: 0 !important;
+    max-width: none;
   }
 
-  /* 3) Profile image as rectangle, centered */
-  section#about img {
-    display: block;
-    width: 140px;        /* tweak as you like */
-    height: auto;        /* preserves aspect ratio */
-    margin: 0 auto 1rem; /* center + spacing below */
-    border-radius: 0;    /* perfect rectangle */
-    object-fit: cover;
-  }
-
-  /* 4) About text: readable, centered */
-  section#about .about {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 90%;
-  }
-
-  /* 5) Skills list: full-width, no indent */
-  section#skills .skills-list {
-    width: 100%;
-    padding-left: 0;
-    margin: 1rem auto 0;
-  }
-  section#skills .skills-list li {
-    font-size: 0.9rem;
-    margin-bottom: 0.6rem;
-  }
-
-  /* 6) Collapse any multi-column grids into one column */
-  .project-grid,
-  .container,
-  .layout {
+  /* Projects */
+  .project-grid {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 1rem;
   }
 
-  /* 7) Tweak global font-sizes & spacing */
-  :root {
-    --font-size-base: 14px;
-    --font-size-small: 0.85rem;
-    --font-size-large: 1.5rem;
-  }
+  /* Sections & Footer */
   .section {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem !important;
   }
   footer {
-    padding: 2rem 1rem;
-    font-size: 0.75rem;
+    padding: 2rem 1rem !important;
+    font-size: 0.7rem;
   }
 }
