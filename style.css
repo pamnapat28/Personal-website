@@ -503,7 +503,98 @@ body {
   }
 }
 }
+/* =====================================================
+   Mobile Responsive Overrides (max-width: 600px)
+   ===================================================== */
+@media (max-width: 600px) {
+  /* Header: Stack and shrink padding */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+  }
 
+  /* Navigation: vertical list, full width */
+  .nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  /* Main content: allow auto height for background image */
+  .main-content {
+    height: auto;
+    background-attachment: scroll;
+  }
+
+  /* Section padding tightened */
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  /* Project grid: single column */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Grid-based containers collapse to single column */
+  .container,
+  .layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Sidebar (side) becomes full width, remove borders */
+  .side {
+    padding: 1rem 1.5rem;
+    border: none !important;
+  }
+
+  /* Typography: slightly smaller base sizes */
+  :root {
+    --font-size-base: 14px;
+    --font-size-small: 0.85rem;
+    --font-size-large: 1.5rem;
+  }
+
+  /* Gallery & thumbnails: adjust margins for small screens */
+  .gallery {
+    gap: 0.5rem;
+  }
+  .thumbnails {
+    padding-bottom: 0.25rem;
+  }
+
+  /* Adjust image thumbnails height proportionally */
+  .thumbnails img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Skills list: full width and center */
+  .skills-list {
+    width: 100%;
+    padding-left: 0;
+    margin: 1rem 0;
+  }
+  .skills-list li {
+    font-size: 0.9rem;
+  }
+
+  /* Contact & about text: center align for readability */
+  .about,
+  .contact {
+    text-align: center;
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+  }
+
+  /* Footer: reduce padding */
+  footer {
+    padding: 2rem 1rem;
+    font-size: 0.75rem;
+  }
+}
 
 
 
