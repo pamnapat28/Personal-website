@@ -474,125 +474,128 @@ body {
 /* ============================
    Mobile Responsive Overrides
    ============================ */
+/* ====================
+   Mobile Responsive Styles
+   ==================== */
 
-/* General Mobile Styles (<=768px) */
+/* Tablet and small desktops */
 @media (max-width: 768px) {
-  /* Header: stack logo + nav */
+  /* Header stacks vertically */
   header {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
   }
   .nav {
-    flex-direction: column;
-    gap: 0.5rem;
     margin-top: 0.5rem;
+    gap: 1rem;
+  }
+  .nav a {
+    font-size: var(--font-size-small);
   }
 
-  /* Hero: reduce height for mobile */
+  /* Hero section height adjustment */
   .main-content {
-    height: 50vh;
-    background-position: top center;
+    height: 60vh;
   }
 
-  /* About section: single column */
+  /* About section stacks and centers */
   #about {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin: 4rem 1rem;
   }
-  #about > div,
-  #about img {
-    flex: none;
+  #about > div {
     width: 100%;
-    max-width: 340px;
+    max-width: 100%;
+  }
+  #about img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
   }
 
-  /* Skills list: wrap into rows */
+  /* Skills list full width */
   .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding-left: 0;
     list-style: none;
-    gap: 1rem;
   }
   .skills-list li {
-    flex: 0 1 45%;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5rem;
   }
 
-  /* Sections padding adjustments */
-  .section {
-    padding: 3rem 1rem;
-  }
-
-  /* Project grid: single column */
+  /* Project grid single column */
   .project-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   .project-tile {
-    padding: 1rem;
+    width: 90%;
+    margin: 0 auto;
   }
 
-  /* Contact: center align */
-  #contact .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  #contact .contact strong {
-    width: auto;
-  }
-
-  /* Footer: tighter spacing */
-  footer {
-    padding: 2rem 1rem;
-    font-size: 0.75rem;
+  /* Section padding */
+  section {
+    padding: 3rem 1rem;
   }
 }
 
-/* Project Detail Pages Mobile (<=768px) */
-@media (max-width: 768px) {
-  /* Two-column container -> single column */
-  .container {
-    grid-template-columns: 1fr;
-    height: auto;
+/* Mobile phones */
+@media (max-width: 480px) {
+  /* Logo and nav smaller */
+  .logo {
+    font-size: 1rem;
   }
-  .side {
-    padding: 1.5rem;
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  .side.left {
-    border-right: none;
-    border-bottom: 1px solid var(--muted);
+  .nav a {
+    font-size: 0.85rem;
   }
 
-  /* Shared layout pages */
+  /* Section titles smaller */
+  .section-title {
+    font-size: 1.2rem;
+  }
+  .section {
+    padding: 2rem 0.5rem;
+  }
+
+  /* Contact font size */
+  #contact .contact {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive tweaks for project-detail pages */
+@media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     height: auto;
   }
   .sidebar {
-    grid-row: 1;
+    flex-direction: row;
+    overflow-x: auto;
     border-right: none;
     border-bottom: 1px solid var(--muted);
+    padding-bottom: 1rem;
+    gap: 1rem;
+  }
+  .sidebar h1 {
+    font-size: 1.5rem;
   }
   .hero {
     grid-row: 2;
-    height: auto;
-    min-height: 200px;
+    grid-column: 1;
+    height: 50vh;
   }
   .thumbnails {
-    grid-row: 3;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 }
