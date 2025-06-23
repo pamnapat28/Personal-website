@@ -433,6 +433,8 @@ body {
 .thumbnails img.selected {
   border-color: var(--fg);
 }
+/* …everything up to the end of your thumbnails… */
+
 .thumbnails::before,
 .thumbnails::after {
   content: '';
@@ -443,17 +445,20 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
 .thumbnails::before {
   left: 0;
   background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
 }
+
 .thumbnails::after {
   right: 0;
   background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
-/* ==== Mobile Styles ==== */
-/* =====================================================
-   Mobile Responsive Overrides (max-width: 600px)
-   ===================================================== */
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/* NOW THE MOBILE STUFF: make sure this is OUTSIDE *any* other rule   */
+/* ──────────────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
   /* Header: stack vertically, shrink padding */
   header {
@@ -462,50 +467,46 @@ body {
     padding: 0.75rem 1rem;
   }
 
-  /* Navigation: vertical full-width list */
+  /* Navigation: full-width vertical list */
   .nav {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
   }
 
-  /* Main content: auto height background */
+  /* Main content: auto-height so you can scroll */
   .main-content {
     height: auto;
     background-attachment: scroll;
   }
 
-  /* Section padding tightened */
+  /* Tighten section padding */
   .section {
     padding: 2rem 1rem;
   }
 
-  /* Project grid: single column */
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  /* Containers collapse to one column */
+  /* Projects, containers, layouts collapse to 1 column */
+  .project-grid,
   .container,
   .layout {
     grid-template-columns: 1fr !important;
+    gap: 1rem;
   }
 
-  /* Sidebars become full width, remove borders */
+  /* Side panels become full width */
   .side {
     padding: 1rem 1.5rem;
     border: none !important;
   }
 
-  /* Typography: slightly smaller base sizes */
+  /* Scale down base fonts */
   :root {
     --font-size-base: 14px;
     --font-size-small: 0.85rem;
     --font-size-large: 1.5rem;
   }
 
-  /* Gallery & thumbnails adjustments */
+  /* Gallery & thumbnails tweaks */
   .gallery {
     gap: 0.5rem;
   }
@@ -517,7 +518,36 @@ body {
     height: auto;
   }
 
-  /* Skills list: full width, no indent */
+  /* About & Contact: center and full-width */
+  .about,
+  .contact {
+    text-align: center;
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
+
+  /* ABOUT section: stack image + text */
+  /* if your HTML is using <section id="about">…<img>…<p class="about">… */
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Profile image as rectangle */
+  #about img {
+    display: block;
+    width: 120px;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  /* Skills list: flush, full width */
   .skills-list {
     width: 100%;
     padding-left: 0;
@@ -528,35 +558,7 @@ body {
     margin-bottom: 0.6rem;
   }
 
-  /* About & Contact text: center-aligned */
-  .about,
-  .contact {
-    text-align: center;
-    font-size: var(--font-size-small);
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
-
-  /* About Me container: stack image + text */
-  #about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem 1rem;
-  }
-
-  /* About Me image: rectangle */
-  #about img {
-    display: block;
-    width: 120px;
-    height: auto;
-    margin: 1rem auto;
-    border-radius: 0;
-    object-fit: cover;
-  }
-
-  /* Footer: reduce padding & font size */
+  /* Footer: trim padding & font */
   footer {
     padding: 2rem 1rem;
     font-size: 0.75rem;
