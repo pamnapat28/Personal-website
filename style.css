@@ -471,93 +471,128 @@ body {
    Mobile tweaks for index.html
    (≤600px)
    ————————————————————— */
-@media (max-width: 600px) {
-  /* Prevent any horizontal scroll */
-  body {
-    overflow-x: hidden;
+/* ============================
+   Mobile Responsive Overrides
+   ============================ */
+
+/* General Mobile Styles (<=768px) */
+@media (max-width: 768px) {
+  /* Header: stack logo + nav */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
 
-  /* Hero: shorter and full-width */
+  /* Hero: reduce height for mobile */
   .main-content {
-    width: 100%;
     height: 50vh;
     background-position: top center;
   }
 
-  /* Header: slightly bigger padding and center logo */
-  header {
-    padding: 1rem;
-  }
-  .logo {
-    font-size: 1.2rem;
-  }
-
-  /* About section: stack, center, tighten up */
+  /* About section: single column */
   #about {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 1.5rem !important;
-    margin: 4rem 1rem 2rem !important;
-    padding: 0 !important;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
-  /* Profile image */
-  #about > div:first-child img {
-    width: 220px !important;
-    height: auto !important;
-    margin: 0 auto;
-  }
-  /* “ABOUT ME” heading */
-  #about > div:nth-child(2) > div:first-child {
-    font-size: 1.6rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-  /* About paragraph */
-  #about > div:nth-child(2) > div:last-child {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
+  #about > div,
+  #about img {
+    flex: none;
+    width: 100%;
+    max-width: 340px;
   }
 
-  /* Skills heading */
-  #about > div:nth-child(3) > div:first-child {
-    font-size: 1.6rem !important;
-  }
-  /* Skills list */
+  /* Skills list: wrap into rows */
   .skills-list {
-    padding-left: 0.5rem !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    gap: 1rem;
   }
   .skills-list li {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  .skills-list .skill-desc {
-    font-size: 0.85rem !important;
+    flex: 0 1 45%;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    text-align: center;
   }
 
-  /* Projects grid → single column */
+  /* Sections padding adjustments */
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  /* Project grid: single column */
   .project-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-    padding: 0 1rem !important;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .project-tile {
-    max-width: 300px;
-    margin: 0 auto;
+    padding: 1rem;
   }
 
-  /* Contact: center text */
+  /* Contact: center align */
   #contact .contact {
-    text-align: center !important;
-    padding: 0 1rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #contact .contact strong {
+    width: auto;
   }
 
-  /* Footer: smaller & centered */
+  /* Footer: tighter spacing */
   footer {
-    font-size: 0.75rem !important;
-    text-align: center !important;
-    padding: 2rem 1rem !important;
+    padding: 2rem 1rem;
+    font-size: 0.75rem;
   }
 }
 
+/* Project Detail Pages Mobile (<=768px) */
+@media (max-width: 768px) {
+  /* Two-column container -> single column */
+  .container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .side {
+    padding: 1.5rem;
+  }
+  .side.left {
+    border-right: none;
+    border-bottom: 1px solid var(--muted);
+  }
+
+  /* Shared layout pages */
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    height: auto;
+  }
+  .sidebar {
+    grid-row: 1;
+    border-right: none;
+    border-bottom: 1px solid var(--muted);
+  }
+  .hero {
+    grid-row: 2;
+    height: auto;
+    min-height: 200px;
+  }
+  .thumbnails {
+    grid-row: 3;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+}
