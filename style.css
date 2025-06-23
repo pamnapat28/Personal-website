@@ -466,42 +466,63 @@ body {
 /*————————————————————————————
   Mobile fine-tuning for About & Skills (≤600px)
 ————————————————————————————*/
+/* —————————————————————
+   Mobile tweaks for index.html
+   (≤600px)
+   ————————————————————— */
 @media (max-width: 600px) {
-  /* Stack & pad the About section */
+  /* Hero area */
+  .main-content {
+    height: 50vh;                     /* a bit shorter */
+    background-position: top center;
+  }
+
+  /* About section stacks & centers */
   #about {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 2rem !important;
     padding: 2rem 1rem !important;
-    margin-top: 3rem !important;
+    gap: 1.5rem !important;
+    margin-top: 4rem !important;
   }
-
-  /* Profile image: smaller and centered */
   #about > div:first-child img {
     width: 220px !important;
     height: auto !important;
     margin-bottom: 1rem !important;
   }
-
-  /* ABOUT ME & SKILLS headings */
-  #about > div:nth-child(2) > div:first-child,
-  #about > div:nth-child(3) > div:first-child {
-    font-size: 1.6rem !important;
-    margin-bottom: 0.75rem !important;
+  #about > div:nth-child(2),
+  #about > div:nth-child(3) {
+    width: 100% !important;
+    text-align: center !important;
   }
 
-  /* About description text */
-  #about > div:nth-child(2) > div:last-child {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
+  /* Skills list centers */
+  .skills-list {
+    justify-content: center;
+    padding-left: 0.5rem;
   }
 
-  /* Skills list items & inline desc */
-  .skills-list li {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.5rem !important;
+  /* Projects go single-column */
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 0 1rem;
   }
-  .skills-list .skill-desc {
-    font-size: 0.85rem !important;
+  .project-tile {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  /* Contact centers */
+  #contact .contact {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* Footer smaller & centered text */
+  footer {
+    padding: 2rem 1rem !important;
+    font-size: 0.75rem !important;
+    text-align: center;
   }
 }
